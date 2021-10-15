@@ -1,0 +1,33 @@
+
+
+import java.util.*;
+public class Main {
+	public static void main(String args[])
+	{
+		int i;
+		Scanner sc= new Scanner(System.in);
+		System.out.println("enter the number of elements");
+		int n= sc.nextInt();
+	int a[]= new int[100];
+	System.out.println("enter the  elements");
+	for(i=0;i<n;i++)
+	{
+		a[i]=sc.nextInt();
+	}
+	System.out.println("enter the position to delete");
+	int pos= sc.nextInt();
+	if (pos<0 && pos >n)
+	{
+		System.out.println("invalid position");
+	}
+	for ( i=pos-1;i<n;i++)
+	{
+		a[i]=a[i+1];
+	}
+	for(i=0;i<n-1;i++)
+	{
+		System.out.println(a[i]);
+	}
+	}
+
+}
