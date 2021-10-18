@@ -1,0 +1,78 @@
+
+
+import java.util.*;
+
+
+public class Duplicate {
+	int r,f;
+	int capacity;
+	int [] queue;
+	Duplicate () {
+		r=-1;
+		f=0;
+		capacity=10;
+		queue= new int [capacity];
+	}
+	public boolean empty()
+	{
+		return f>r;
+	}
+	public boolean full()
+	{
+		return r==capacity-1;
+	}
+	public void insert()
+	{Scanner sc = new Scanner(System.in);
+		if(full()) {
+			System.out.println("queue full");
+			return;
+		}
+		System.out.println("enter item");
+		int item= sc.nextInt();
+		queue[++r]=item;
+	}
+	public void delete()
+	{
+		if(empty())
+		{
+			System.out.println("queue empty");
+			return;
+		}
+		f++;
+	}
+	public void display()
+	{
+		int i;
+		if(empty())
+		{
+			System.out.println("queue empty");
+			return;
+		}
+		for(i=f;i<=r;i++)
+		{
+			System.out.println(queue[i]);
+		}
+		
+	}
+
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Duplicate st = new Duplicate();
+		for(;;)
+		{
+			System.out.println("press 1 to insert 2 to delete 3 to display");
+			int choice=sc.nextInt();
+			switch(choice)
+			{
+			case 1: st.insert();
+					break;
+			case 2: st.delete();
+					break;
+			case 3: st.display();
+					break;
+			}
+		}
+	}
+
+}
