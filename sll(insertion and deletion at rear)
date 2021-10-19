@@ -1,0 +1,93 @@
+
+import java.util.*;
+class node{
+	 public int info;
+	public node link;
+	
+	
+}
+ class list{
+	 
+	 private node root;
+	 private static  Scanner sc;
+	 
+	 public list()
+	 {
+		 root=null;
+		 sc= new Scanner(System.in);
+	 }
+	 public void i_r()
+	{
+		 node t=new node();
+			System.out.println("enter the value for info\n");
+			t.info = sc.nextInt();
+			t.link = null;
+			if(root==null)
+			{
+				root=t;
+				return;
+			}
+			node temp = root;
+			while(temp.link!=null)
+			{
+				temp=temp.link;
+			}
+			temp.link=t;	
+			
+
+		
+	}
+	 public void d_r()
+	 {
+		 if(root==null)
+		 {
+			 System.out.println("sll empty");
+			 return;
+		 }
+		 node cur=root;
+		 node prev=null;
+		while(cur.link!=null)
+		{
+			prev=cur;
+			cur=cur.link;
+		}
+		prev.link=null;
+	 }
+	public void display()
+	{
+		
+		if(root==null)
+		 {
+			 System.out.println("sll empty");
+			 return;
+		 }
+		for(node t=root; t!=null   ; t=t.link)
+		{
+			System.out.println(t.info);
+		}
+	}
+}
+public class Linkedlist {
+
+	public static void main(String[] args) {
+		list l= new list();
+		Scanner sc=new Scanner(System.in);
+		for(;;)
+		{
+			System.out.println("press 1 for insert front ,2 to delete front,3 to display");
+			int choice;
+			choice=sc.nextInt();
+			switch(choice)
+			{
+			case 1:l.i_r();
+					break;
+			case 2: l.d_r();
+					break;
+			case 3:l.display();
+					break;
+			}
+		}
+		
+	}
+
+}
