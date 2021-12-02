@@ -1,0 +1,25 @@
+class Tester {
+	public static void main(String[] args) {
+	int n=45;
+	int temp=n;
+	int res=1000;
+	int mul=1,rem=0;
+	while(n>0)
+	{
+	    rem=n%10;
+	    mul=mul*rem;
+	    n=n/10;
+	    
+	}
+     mul=mul*temp;
+	if(mul==res)
+	{
+	    System.out.println("seed of number");
+	}
+	else 
+	{
+	    System.out.println("not a seed of a number");
+	}
+	
+	}
+}
