@@ -1,0 +1,21 @@
+class Tester {
+	public static void main(String[] args) {
+		int h=3;
+		int legs=11;
+	 
+	 int c=2;
+	 int r=4;
+	 int temp;
+	 temp=150*2;
+	 int diff=legs-temp;
+	 int result=diff/2;
+	 int rabbit=result;
+	 int chicken=h-result;
+	 if(rabbit>0 && chicken>0){
+	 System.out.println("rabbit="+ rabbit);
+	 System.out.println("chicken="+chicken);}
+	 else{
+	     System.out.println("cannot be found");
+	 }
+	}
+}
